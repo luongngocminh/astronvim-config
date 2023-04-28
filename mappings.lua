@@ -39,4 +39,8 @@ return {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
   },
+  v = {
+    ["J"] = { ":m '>+1<cr>gv=gv", desc = "Move line down" },
+    ["K"] = { ":m '<-2<cr>gv=gv", desc = "Move line up" },
+  }
 }
