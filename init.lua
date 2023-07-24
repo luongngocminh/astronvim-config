@@ -28,6 +28,14 @@ return {
       clangd = {
         capabilities = { offsetEncoding = "utf-8" },
       },
+      ['nomic-solidity'] = function()
+        return {
+          cmd = { 'nomicfoundation-solidity-language-server', '--stdio' },
+          filetypes = { 'solidity' },
+          root_dir = require("lspconfig.util").find_git_ancestor,
+          single_file_support = true,
+        }
+      end
     },
     -- customize lsp formatting options
     formatting = {
@@ -52,6 +60,7 @@ return {
     -- enable servers that you already have installed without mason
     servers = {
       -- "pyright"
+      "nomic-solidity"
     },
   },
   -- Configure require("lazy").setup() options
